@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Add</a>
+
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+      <form action="#addTd">
+        <div>
+          <h3>Add User</h3>
+          <label for="name" class="ui-hidden-accessible">Name:</label>
+          <input type="text" name="name" id="name" placeholder="Name">
+          <label for="usrnm" class="ui-hidden-accessible">Username:</label>
+          <input type="text" name="user" id="usrnm" placeholder="Username">
+          <label for="pswd" class="ui-hidden-accessible">Password:</label>
+          <input type="password" name="pass" id="pswd" placeholder="Password">
+          <input type="button" id="myBtn" value="Add">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="addTd" data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+  <table id="userList" border="1">
+      <tr>
+        <th>Name</th><th>Email</th><th>Password</th>
+      </tr>
+    
+    </table>
+    
+</div> 
+
+<script>
+  document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+
+var tr = document.createElement("tr");
+var td1 = document.createElement("td");
+var name = document.createTextNode(document.getElementById('name').value;);
+td1.appendChild(name);
+var td2 = document.createElement("td");
+var user = document.createTextNode(document.getElementById('usrnm').value;);
+td2.appendChild(user);
+var td3 = document.createElement("td");
+var pass = document.createTextNode(document.getElementById('pswd').value;);
+td3.appendChild(pass);
+
+tr.appendChild(td1);
+tr.appendChild(td2);
+tr.appendChild(td3);
+
+var element = document.getElementById("userList");
+element.appendChild(tr);
+}
+</script>
+</body>
+</html>
