@@ -101,9 +101,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </div>
 <script>
 
-</script>
-<script>
-
 var modal = document.getElementById('myModal');
 //var btn = document.getElementById("myButton");
 var span = document.getElementsByClassName("close")[0];
@@ -119,7 +116,13 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-  function addUser() {
+
+  </script>
+
+  <script>
+
+
+function addUser() {
 var tr = document.createElement("tr");
 var td1 = document.createElement("td");
 var name = document.createTextNode(document.getElementById('name').value);
@@ -132,11 +135,11 @@ var pass = document.createTextNode(document.getElementById('pwd').value);
 td3.appendChild(pass);
 var td4 = document.createElement("td");
 var edit = document.createElement('button');
-edit.setAttribute("onclick", "edit(this)");
+edit.setAttribute("onclick", "editList()");
 var ed = document.createTextNode("Edit");
 edit.appendChild(ed);
 var del = document.createElement('button');
-del.setAttribute("onclick", "delete(this)");
+del.setAttribute("onclick", "this.parentNode.parentNode.removeChild(this.parentNode)");
 var dl = document.createTextNode("Delete");
 del.appendChild(dl);
 
@@ -151,6 +154,13 @@ tr.appendChild(td4);
 var element = document.getElementById("userList");
 element.appendChild(tr);
 document.getElementById('myModal').style.display = "none";
+}
+</script>
+<script>
+  function editList() {
+var c = this.parentNode.parentNode.childNodes;
+alert("sdsdssaasasasdds"+c[0].text);
+
 }
 </script>
 
